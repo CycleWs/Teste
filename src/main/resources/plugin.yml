@@ -1,0 +1,7 @@
+name: FirstPluginWs
+main: me.projeto.Main
+version: 1.0
+author: CycleWs
+description: Primeiro Plugin
+commands:
+  kit:
