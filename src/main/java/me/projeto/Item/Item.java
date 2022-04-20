@@ -37,11 +37,11 @@ public class Item {
         itemstack.setItemMeta(itemmeta);
         return this;
     }
-    /*public Item deixaInquebravel(){
-        itemmeta.setUnbreakable(true);
+    public Item setInquebravel(){
+        itemmeta.spigot().setUnbreakable(true);
         itemstack.setItemMeta(itemmeta);
         return this;
-    }*/
+    }
     public Item escondeEncanto(){
         itemmeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         itemstack.setItemMeta(itemmeta);

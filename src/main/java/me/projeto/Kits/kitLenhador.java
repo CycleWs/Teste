@@ -22,6 +22,7 @@ public abstract class kitLenhador {
         treeCapitator = new Item(Material.WOOD_AXE, 1, (short) 0)
                 .setName("§eTreecapitator")
                 .setLore(List.of("§3Quebre uma arvore para pegar todas as madeiras!"))
+                .setInquebravel()
                 .getItemstack();
 
         p.sendMessage("§aVocê selecionou o kit Lenhador");
