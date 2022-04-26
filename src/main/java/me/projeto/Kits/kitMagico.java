@@ -1,7 +1,6 @@
-package me.projeto.Kits;
+package me.projeto.kits;
 
 import me.projeto.Item.Item;
-import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
@@ -38,6 +37,14 @@ public abstract class kitMagico implements Projectile {
                 if(i.getItemMeta().getDisplayName().equalsIgnoreCase("§aVarinha Mágica")){
                     ThrownPotion LP = (ThrownPotion) p.getWorld().spawnEntity(p.getLocation(), EntityType.SPLASH_POTION);
 
+                }
+            }
+        }
+        if(e.getAction()== Action.LEFT_CLICK_AIR){
+            if(e.getItem() != null){
+                ItemStack i = e.getItem();
+                if(i.getItemMeta().getDisplayName().equalsIgnoreCase("§aVarinha Mágica")){
+                    ThrownPotion potion = (ThrownPotion) p.getWorld().spawnEntity(p.getLocation(), EntityType.SPLASH_POTION);
                 }
             }
         }

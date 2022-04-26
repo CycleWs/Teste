@@ -1,15 +1,12 @@
-package me.projeto.Kits;
+package me.projeto.kits;
 
 import me.projeto.Item.Item;
 import me.projeto.eventos.CoolDown;
-import org.bukkit.Bukkit;
-import org.bukkit.Effect;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;

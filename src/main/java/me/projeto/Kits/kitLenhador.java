@@ -1,13 +1,11 @@
-package me.projeto.Kits;
+package me.projeto.kits;
 
 import me.projeto.Item.Item;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -47,7 +45,7 @@ public abstract class kitLenhador {
             ItemStack item = p.getInventory().getItemInHand();
             if (item.hasItemMeta() && item.getItemMeta().hasDisplayName() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§eTreecapitator")) {
                 p.sendMessage("§eVoce quebrou um bloco de madeira!");
-                p.addPotionEffect(new PotionEffect((PotionEffectType.SPEED), 20 * 10, 2, false, true));
+                p.addPotionEffect(new PotionEffect((PotionEffectType.SPEED), 20 * 10, 1, false, true));
                 p.addPotionEffect(new PotionEffect((PotionEffectType.HEAL), 20 * 8, 1, false, true));
                 breakTree(b);
             }
@@ -56,7 +54,7 @@ public abstract class kitLenhador {
             ItemStack item = p.getInventory().getItemInHand();
             if (item.hasItemMeta() && item.getItemMeta().hasDisplayName() && item.getItemMeta().getDisplayName().equalsIgnoreCase("§eTreecapitator")) {
                 p.sendMessage("§eVoce quebrou um bloco de madeira!");
-                p.addPotionEffect(new PotionEffect((PotionEffectType.SPEED), 20 * 10, 2, false, true));
+                p.addPotionEffect(new PotionEffect((PotionEffectType.SPEED), 20 * 10, 1, false, true));
                 p.addPotionEffect(new PotionEffect((PotionEffectType.HEAL), 20 * 5, 1, false, true));
                 breakTree(b);
             }

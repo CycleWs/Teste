@@ -1,17 +1,14 @@
-package me.projeto.Comandos;
+package me.projeto.comandos;
 
-import me.projeto.Item.Item;
-import me.projeto.Kits.kitLenhador;
-import me.projeto.Kits.kitMagico;
-import me.projeto.Kits.kitVoar;
-import org.bukkit.Material;
+import me.projeto.kits.kitLenhador;
+import me.projeto.kits.kitMagico;
+import me.projeto.kits.kitVoar;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class Comandos implements CommandExecutor {

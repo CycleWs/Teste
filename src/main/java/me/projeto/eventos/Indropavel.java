@@ -4,9 +4,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import static me.projeto.Kits.kitLenhador.treeCapitator;
-import static me.projeto.Kits.kitMagico.wand;
-import static me.projeto.Kits.kitVoar.pena;
+import static me.projeto.kits.kitLenhador.treeCapitator;
+import static me.projeto.kits.kitMagico.wand;
+import static me.projeto.kits.kitVoar.pena;
 
 public class Indropavel implements Listener {
     @EventHandler

@@ -1,11 +1,8 @@
 package me.projeto;
 
-import me.projeto.Comandos.Comandos;
-import me.projeto.Kits.kitVoar;
+import me.projeto.comandos.Comandos;
 import me.projeto.eventos.*;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin{
@@ -21,6 +18,7 @@ public class Main extends JavaPlugin{
         Bukkit.getPluginManager().registerEvents(new kitEvents(), this);
         Bukkit.getPluginManager().registerEvents(new InventoryClick(), this);
         Bukkit.getPluginManager().registerEvents(new Indropavel(), this);
+        Bukkit.getPluginManager().registerEvents(new ServerEvents(), this);
         //Bukkit.getPluginManager().registerEvents(new Phantom(), this);
     }
 

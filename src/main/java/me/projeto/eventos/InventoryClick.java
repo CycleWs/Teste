@@ -1,8 +1,8 @@
 package me.projeto.eventos;
 
-import me.projeto.Kits.kitLenhador;
-import me.projeto.Kits.kitMagico;
-import me.projeto.Kits.kitVoar;
+import me.projeto.kits.kitLenhador;
+import me.projeto.kits.kitMagico;
+import me.projeto.kits.kitVoar;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
