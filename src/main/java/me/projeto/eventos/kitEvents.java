@@ -11,7 +11,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 public class kitEvents implements Listener {
     @EventHandler
     public void ativaVoar(PlayerInteractEvent p){
-        kitVoar.efeitoVoar(p);
+        //kitVoar.efeitoVoar(p);
     }
     @EventHandler
     public void ativaLenhador(BlockBreakEvent p){

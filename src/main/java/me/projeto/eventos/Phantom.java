@@ -1,6 +1,8 @@
-package me.projeto.eventos;
+/*package me.projeto.eventos;
 
-/*import org.bukkit.Material;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -8,41 +10,26 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashMap;
-import java.util.UUID;
 
-public class Phantom implements Listener {
-    private HashMap<UUID, Long> cooldown = new HashMap<UUID,Long>();
-    private int cooldowntime = 10;
+public class Phantom extends JavaPlugin implements Listener {
 
     @EventHandler
-    public void fazVoar(PlayerInteractEvent d){
-        Player p = d.getPlayer();
-        ItemStack i = p.getInventory().getItemInHand();
+    public void phantom(PlayerInteractEvent c) {
+        Player p = c.getPlayer();
+        ItemStack item = p.getInventory().getItemInHand();
 
-        if(d.getAction() == Action.RIGHT_CLICK_AIR){
-            if(cooldown.containsKey(p.getUniqueId())){
-                long secondsLeft = ((cooldown.get(p.getUniqueId())/1000) + cooldowntime) -(System.currentTimeMillis()/1000);
+        if ((c.getAction() == Action.RIGHT_CLICK_AIR) && (item.getItemMeta().getDisplayName().equalsIgnoreCase("§eVoar"))) {
 
-                if(secondsLeft > 0){
-                    p.sendMessage("Você não pode usar o kit por:"+secondsLeft);
-                    p.setAllowFlight(true);
-                    p.setFlying(true);
-                }
-            }else{
-                p.sendMessage("Voce ta em cooldown: "+cooldowntime);
-                cooldown.put(p.getUniqueId(),System.currentTimeMillis());
-                p.setAllowFlight(false);
-                p.setFlying(false);
-            }
-        }else{
-            long secondsLeft = ((cooldown.get(p.getUniqueId())/1000) + cooldowntime) -(System.currentTimeMillis()/1000);
-
-            if(secondsLeft > 0){
-                p.sendMessage("Você não pode usar o kits por:"+secondsLeft);
-                p.setAllowFlight(false);
-                p.setFlying(false);
+            if (CoolDown.checkCooldown(c.getPlayer())) {
+                p.playSound(p.getLocation(), Sound.ENDERDRAGON_GROWL, 10, 1);
+                p.sendMessage("§aVocê está voando por 10 segundos");
+                CoolDown.setCooldown(c.getPlayer(), 20);
+                p.setAllowFlight(true);
+                Bukkit.getScheduler().runTaskLater(this, () -> p.sendMessage("Test"), 100L);
+            } else{
+                p.sendMessage("§cVocê não pode utilizar o kit por: " + CoolDown.getCooldown(p) + " Segundos");
             }
         }
     }

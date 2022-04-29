@@ -2,6 +2,7 @@ package me.projeto;
 
 import me.projeto.comandos.Comandos;
 import me.projeto.eventos.*;
+import me.projeto.kits.kitVoar;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +20,7 @@ public class Main extends JavaPlugin{
         Bukkit.getPluginManager().registerEvents(new InventoryClick(), this);
         Bukkit.getPluginManager().registerEvents(new Indropavel(), this);
         Bukkit.getPluginManager().registerEvents(new ServerEvents(), this);
+        Bukkit.getPluginManager().registerEvents(new kitVoar(), this);
         //Bukkit.getPluginManager().registerEvents(new Phantom(), this);
     }
 
